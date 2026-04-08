@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Your Everything Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-store"></i>
+                        <span>ShopHub</span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search ShopHub">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="account">
+                            <i class="fas fa-user"></i>
+                            <span>Account</span>
+                        </div>
+                        <div class="cart-icon" onclick="toggleCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="categories">
+                    <a href="#" class="category-link" onclick="filterProducts('all')">All</a>
+                    <a href="#" class="category-link" onclick="filterProducts('electronics')">Electronics</a>
+                    <a href="#" class="category-link" onclick="filterProducts('books')">Books</a>
+                    <a href="#" class="category-link" onclick="filterProducts('clothing')">Clothing</a>
+                    <a href="#" class="category-link" onclick="filterProducts('home')">Home & Kitchen</a>
+                    <a href="#" class="category-link" onclick="filterProducts('sports')">Sports</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Welcome to ShopHub</h1>
+            <p>Discover millions of products at great prices</p>
+        </div>
+    </section>
+
+    <!-- Deals Banner -->
+    <section class="deals-banner">
+        <div class="container">
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <h3>🔥 Lightning Deals</h3>
+                    <p>Limited time offers up to 70% off</p>
+                </div>
+                <div class="deal-card">
+                    <h3>📦 Free Shipping</h3>
+                    <p>On orders over $25</p>
+                </div>
+                <div class="deal-card">
+                    <h3>🎁 Best Sellers</h3>
+                    <p>Most popular items this week</p>
+                </div>
+                <div class="deal-card">
+                    <h3>⭐ New Arrivals</h3>
+                    <p>Fresh products added daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <div class="filter-buttons">
+                    <button onclick="sortProducts('price-low')" class="sort-btn">Price: Low to High</button>
+                    <button onclick="sortProducts('price-high')" class="sort-btn">Price: High to Low</button>
+                    <button onclick="sortProducts('rating')" class="sort-btn">Top Rated</button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell on ShopHub</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Help & Settings</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ShopHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
